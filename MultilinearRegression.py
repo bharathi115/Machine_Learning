@@ -44,6 +44,22 @@ x2
 X=np.column_stack((x1,x2))
 X
 
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(
+    df["EducationLevel"],
+    df["YearsExperience"],
+    df["Salary"]
+)
+ax.set_title(
+    "EducationLevel vs YearsExperience vs Salary"
+)
+ax.set_xlabel("Education Level")
+ax.set_ylabel("Years Experience")
+ax.set_zlabel("Salary")
+plt.show()
+
 y=df.loc[1:20,'EducationLevel']
 y=y.fillna(y.mean())
 y=np.array(y).reshape(-1,1)
